@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 group = Group.create name: 'Balboa', donation_url: ''
+super_admin_emails.each do
+
+end
 # add_faqs group
 group.charities.create! name: 'Red Cross',
                         description: "Add some description for number 1",
@@ -24,4 +27,13 @@ group.charities.create! name: 'Save the Children',
 
 def add_faqs(group)
   group.faqs.create! question: ""
+end
+
+super_admin_emails = [
+  "puneet.sutar@gmail.com",
+  "fifihypnophonic@gmail.com"
+]
+
+super_admin_emails.each do |email|
+  User.super_admin.create!(email: email)
 end
