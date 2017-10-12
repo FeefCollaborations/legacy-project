@@ -1,0 +1,8 @@
+.signin
+  .row
+    .col-sm-6.col-sm-offset-3
+      .panel.panel-primary
+        .panel-heading.text-center Sign In
+        .panel-body.text-center
+          = link_to "/auth/google_oauth2", class: 'signin-with-google-btn' do
+            = image_tag('btn_google_signin_dark_normal_web')

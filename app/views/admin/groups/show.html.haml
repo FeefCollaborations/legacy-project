@@ -9,20 +9,20 @@
 
 %p
   %b Homepage banner image:
-%p= image_tag(@group.homepage_banner_image, height: "100", width: "100")  if @group.homepage_banner_image
+%p= image_tag(@group.homepage_banner_image, height: "100")  if @group.homepage_banner_image
 %p
   %b Logo image:
-%p= image_tag(@group.logo_image, height: "100", width: "100") if @group.logo_image
+%p= image_tag(@group.logo_image, height: "100") if @group.logo_image
 %p
   %b Favicon:
-%p= image_tag(@group.favicon_image, height: "100", width: "100") if @group.favicon_image
+%p= image_tag(@group.favicon_image, height: "100") if @group.favicon_image
 %p
   %b Favicon 16 x 16:
-%p= image_tag(@group.favicon_image_16_by_16, height: "100", width: "100") if @group.favicon_image_16_by_16
+%p= image_tag(@group.favicon_image_16_by_16, height: "100") if @group.favicon_image_16_by_16
 
 %p
   %b Favicon 32 x 32:
-%p= image_tag(@group.favicon_image_32_by_32, height: "100", width: "100") if @group.favicon_image_32_by_32
+%p= image_tag(@group.favicon_image_32_by_32, height: "100") if @group.favicon_image_32_by_32
 
 = link_to 'Edit', edit_group_path(@group)
 \|

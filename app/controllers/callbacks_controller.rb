@@ -24,8 +24,4 @@ class CallbacksController < ApplicationController
     session['user_id'] = @user.id
   end
 
-  def reset_user_session
-    session['user_id'] = nil
-  end
-
 end

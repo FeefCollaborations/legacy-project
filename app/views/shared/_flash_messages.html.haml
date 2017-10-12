@@ -1,0 +1,13 @@
+- flash.each do |key, value|
+  - if key.to_s.eql?('notice')
+    .alert.alert-success
+      %strong Success!
+      = value
+      %a{href: "#", class: "close", "data-dismiss" => "alert", "aria-label" => "close"}
+        &times
+  - if key.to_s.eql?('alert')
+    .alert.alert-danger
+      %strong Alert!
+      = value
+      %a{href: "#", class: "close", "data-dismiss" => "alert", "aria-label" => "close"}
+        &times

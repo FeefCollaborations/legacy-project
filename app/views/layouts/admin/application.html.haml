@@ -28,9 +28,16 @@
               %span.icon-bar
               %span.icon-bar
               %span.icon-bar
-            %a.navbar-brand
+            %a.navbar-brand{href: root_path}
               = image_tag("logo.png")
+          #navbar.collapse.navbar-collapse
+            %ul.nav.navbar-nav.navbar-right{ :role=>"tablist" }
+              - if current_user
+                %li
+                  = link_to "Logout", session_path, method: :delete
       .row
+        .container-fluid
+          = render "shared/flash_messages"
         = yield
     %br
     %br

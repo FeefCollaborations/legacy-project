@@ -7,7 +7,8 @@ Rails.application.routes.draw do
       resources :faqs
       resources :group_details
     end
+    resource :session
   end
-
+  get '/admin', to: redirect('admin/groups/')
   get '/auth/google_oauth2/callback', to: 'callbacks#google'
 end

@@ -4,9 +4,9 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
     %meta{:name => "viewport", :content=> "width=device-width, initial-scale=1"}
     %title Veracity Project
-    = favicon_link_tag 'favicon-32x32.png', rel: 'icon', type: 'image/png', sizes: '32x32'
-    = favicon_link_tag 'favicon-16x16.png', rel: 'icon', type: 'image/png', sizes: '16x16'
-    = favicon_link_tag 'favicon.ico'
+    = favicon_link_tag current_group.favicon_image_32_by_32, rel: 'icon', type: 'image/png', sizes: '32x32'
+    = favicon_link_tag current_group.favicon_image_16_by_16, rel: 'icon', type: 'image/png', sizes: '16x16'
+    = favicon_link_tag current_group.favicon_image
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
@@ -22,7 +22,7 @@
     .container-fluid
       - if params[:action] == "index"
         .hero-section
-          = image_tag(@group.homepage_banner_image)
+          = image_tag(current_group.homepage_banner_image)
           .hero-text
             .hero-section-title.header
               Inspiring change in our communities
@@ -37,7 +37,7 @@
               %span.icon-bar
               %span.icon-bar
             %a.navbar-brand{href: ( root_path unless current_page?(controller: 'main', action: 'index')) }
-              = image_tag(@group.logo_image)
+              = image_tag(current_group.logo_image)
           #navbar.collapse.navbar-collapse
             %ul.nav.navbar-nav.navbar-right{ :role=>"tablist" }
               - if defined? @sections
