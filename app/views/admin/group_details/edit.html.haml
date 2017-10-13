@@ -1,7 +1,9 @@
-%h1 Editing group_detail
+.row
+  .col-sm-offset-2.col-sm-8
+    %h1 Editing group_detail
 
-= render 'form'
+    = render 'form'
 
-= link_to 'Show', group_group_detail_path(@group, @group_detail)
-\|
-= link_to 'Back', group_group_details_path(@group)
+    = link_to 'Show', group_group_detail_path(@group, @group_detail)
+    \|
+    = link_to 'Back', group_group_details_path(@group)

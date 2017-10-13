@@ -1,0 +1,8 @@
+.row
+  .col-sm-offset-2.col-sm-8
+    %h1 Editing charity
+    = render 'form'
+
+    = link_to 'Show', group_charity_path(@group, @charity)
+    \|
+    = link_to 'Back', group_charities_path(@group)

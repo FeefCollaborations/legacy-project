@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20171011030420) do
     t.string "banner_image_url"
     t.string "donation_url"
     t.string "website_url"
+    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["group_id"], name: "index_charities_on_group_id"

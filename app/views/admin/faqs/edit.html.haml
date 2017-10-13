@@ -1,7 +1,9 @@
-%h1 Editing faq
+.row
+  .col-sm-offset-2.col-sm-8
+    %h1 Editing faq
 
-= render 'form'
+    = render 'form'
 
-= link_to 'Show', group_faq_path(@group, @faq)
-\|
-= link_to 'Back', group_faqs_path
+    = link_to 'Show', group_faq_path(@group, @faq)
+    \|
+    = link_to 'Back', group_faqs_path

@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @charity.name
+%p
+  %b Description:
+  = @charity.description
+%p
+  %b Banner image url:
+  = @charity.banner_image_url
+%p
+  %b Banner image url:
+  = @charity.banner_image_url
+%p
+  %b Donation url:
+  = @charity.donation_url
+%p
+  %b Website url:
+  = @charity.website_url
+%p
+  %b Status:
+  = @charity.status
+
+= link_to 'Edit', edit_group_charity_path(@group, @charity)
+\|
+= link_to 'Back', group_charities_path(@group)

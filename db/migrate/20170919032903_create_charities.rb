@@ -7,6 +7,7 @@ class CreateCharities < ActiveRecord::Migration[5.1]
       t.string :banner_image_url
       t.string :donation_url
       t.string :website_url
+      t.integer :status, default: 0
       t.timestamps
     end
   end

@@ -1,0 +1,30 @@
+.panel
+  .panel-body
+    = form_for [@group, @charity] do |f|
+      - if @charity.errors.any?
+        #error_explanation
+          %h2= "#{pluralize(@charity.errors.count, "error")} prohibited this charity from being saved:"
+          %ul
+            - @charity.errors.full_messages.each do |message|
+              %li= message
+
+      .field.form-group
+        = f.label :name, class: 'control-label'
+        = f.text_field :name, class: 'form-control'
+      .field.form-group
+        = f.label :description, class: 'control-label'
+        = f.text_area :description, class: 'form-control'
+      .field.form-group
+        = f.label :banner_image_url, class: 'control-label'
+        = f.text_field :banner_image_url, class: 'form-control'
+      .field.form-group
+        = f.label :donation_url, class: 'control-label'
+        = f.text_field :donation_url, class: 'form-control'
+      .field.form-group
+        = f.label :website_url, class: 'control-label'
+        = f.text_field :website_url, class: 'form-control'
+      .field.form-group
+        = f.label :status, class: 'control-label'
+        = f.select :status, options_for_select(Charity.statuses.map {|k, v| [k.humanize.capitalize, v]})
+      .actions
+        = f.submit 'Save', class: 'btn btn-primary'

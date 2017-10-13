@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :groups do
       resources :faqs
       resources :group_details
+      resources :charities
     end
     resource :session
   end
