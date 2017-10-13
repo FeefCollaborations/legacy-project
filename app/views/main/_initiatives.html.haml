@@ -1,14 +1,14 @@
 .section.iniaitives
   .section-header.header
     Initiatives
-  - if group.charities.present?
+  - if charities.present?
     .section-text
       #charity-carousel.carousel.slide.initiatives-carousel{"data-ride" => "carousel"}
         %ol.carousel-indicators
-          - group.charities.each_with_index do |_, index|
+          - charities.each_with_index do |_, index|
             %li{"data-slide-to" => index, "data-target" => "#charity-carousel", class: [index.zero? && "active"]}
         .carousel-inner{:role => "listbox"}
-          - group.charities.each_with_index do |charity, index|
+          - charities.each_with_index do |charity, index|
             %div{class: ["item", index.zero? && "active"]}
               = image_tag(charity.banner_image_url)
               .carousel-caption
