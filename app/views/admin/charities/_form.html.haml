@@ -25,6 +25,6 @@
         = f.text_field :website_url, class: 'form-control'
       .field.form-group
         = f.label :status, class: 'control-label'
-        = f.select :status, options_for_select(Charity.statuses.map {|k, _| [k.humanize.capitalize, k]})
+        = f.select :status, options_for_select(Charity.statuses.map {|k, _| [k.humanize.capitalize, k]}, @charity.status)
       .actions
         = f.submit 'Save', class: 'btn btn-primary'
