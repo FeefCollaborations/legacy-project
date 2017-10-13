@@ -16,5 +16,6 @@ class Admin::SessionsController < Admin::ApplicationController
 
   def reset_user_session
     session['user_id'] = nil
+    session['email'] = nil
   end
 end

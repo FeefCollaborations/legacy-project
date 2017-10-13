@@ -13,7 +13,13 @@ class Admin::ApplicationController < ActionController::Base
   end
 
   def current_user
-    User.find_by_id(session['user_id'])
+    @current_user ||= compute_current_user
+  end
+
+  def compute_current_user
+    email = session['email']
+    id = session['user_id']
+    User.find_by(email: email, id: id)
   end
 
   helper_method :current_user

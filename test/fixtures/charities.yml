@@ -3,8 +3,8 @@
 one:
   name: MyString
   description: MyText
-  banner_image_url: MyString
-  banner_image_url: MyString
+  banner_image: MyString
+  banner_image: MyString
   donation_url: MyString
   website_url: MyString
   status: 
@@ -12,8 +12,8 @@ one:
 two:
   name: MyString
   description: MyText
-  banner_image_url: MyString
-  banner_image_url: MyString
+  banner_image: MyString
+  banner_image: MyString
   donation_url: MyString
   website_url: MyString
   status: 

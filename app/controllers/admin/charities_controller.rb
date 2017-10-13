@@ -70,7 +70,7 @@ class Admin::CharitiesController < Admin::ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def charity_params
-    params.require(:charity).permit(:name, :description, :banner_image_url, :banner_image_url, :donation_url, :website_url, :status)
+    params.require(:charity).permit(:name, :description, :banner_image, :donation_url, :website_url, :status)
   end
 
 end

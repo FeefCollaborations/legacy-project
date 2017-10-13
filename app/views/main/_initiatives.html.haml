@@ -10,7 +10,7 @@
         .carousel-inner{:role => "listbox"}
           - charities.each_with_index do |charity, index|
             %div{class: ["item", index.zero? && "active"]}
-              = image_tag(charity.banner_image_url)
+              = image_tag(charity.banner_image)
               .carousel-caption
                 = link_to charity.donation_url, :target => "_blank" do
                   .header= charity.name

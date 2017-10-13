@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(version: 20171011030420) do
     t.bigint "group_id", null: false
     t.string "name", null: false
     t.string "description", null: false
-    t.string "banner_image_url"
+    t.string "banner_image"
     t.string "donation_url"
     t.string "website_url"
-    t.integer "status"
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["group_id"], name: "index_charities_on_group_id"

@@ -17,6 +17,7 @@
 !/log/.keep
 !/tmp/.keep
 .idea/
+/public/uploads/*
 /vender/tmp/*
 
 /node_modules

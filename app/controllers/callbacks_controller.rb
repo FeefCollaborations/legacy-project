@@ -10,7 +10,7 @@ class CallbacksController < ApplicationController
       set_user_session
       redirect_to groups_path, notice: "Signed in successfully!"
     else
-      render text: 'There were issues with login!'
+      redirect_to new_session_path, alert: "Please login with some other email!"
     end
   end
 
@@ -22,6 +22,7 @@ class CallbacksController < ApplicationController
 
   def set_user_session
     session['user_id'] = @user.id
+    session['email'] = @user.email
   end
 
 end

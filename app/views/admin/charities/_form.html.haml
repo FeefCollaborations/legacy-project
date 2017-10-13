@@ -15,8 +15,8 @@
         = f.label :description, class: 'control-label'
         = f.text_area :description, class: 'form-control'
       .field.form-group
-        = f.label :banner_image_url, class: 'control-label'
-        = f.text_field :banner_image_url, class: 'form-control'
+        = f.label :banner_image, class: 'control-label'
+        = f.file_field :banner_image, class: 'form-control'
       .field.form-group
         = f.label :donation_url, class: 'control-label'
         = f.text_field :donation_url, class: 'form-control'
@@ -25,6 +25,6 @@
         = f.text_field :website_url, class: 'form-control'
       .field.form-group
         = f.label :status, class: 'control-label'
-        = f.select :status, options_for_select(Charity.statuses.map {|k, v| [k.humanize.capitalize, v]})
+        = f.select :status, options_for_select(Charity.statuses.map {|k, _| [k.humanize.capitalize, k]})
       .actions
         = f.submit 'Save', class: 'btn btn-primary'

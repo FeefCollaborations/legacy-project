@@ -7,11 +7,8 @@
   %b Description:
   = @charity.description
 %p
-  %b Banner image url:
-  = @charity.banner_image_url
-%p
-  %b Banner image url:
-  = @charity.banner_image_url
+  %b Banner image:
+  = image_tag @charity.banner_image, height: 100
 %p
   %b Donation url:
   = @charity.donation_url

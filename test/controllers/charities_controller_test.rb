@@ -17,7 +17,7 @@ class CharitiesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create charity" do
     assert_difference('Charity.count') do
-      post charities_url, params: { charity: { banner_image_url: @charity.banner_image_url, banner_image_url: @charity.banner_image_url, description: @charity.description, donation_url: @charity.donation_url, name: @charity.name, status: @charity.status, website_url: @charity.website_url } }
+      post charities_url, params: { charity: { banner_image: @charity.banner_image, banner_image: @charity.banner_image, description: @charity.description, donation_url: @charity.donation_url, name: @charity.name, status: @charity.status, website_url: @charity.website_url } }
     end
 
     assert_redirected_to charity_url(Charity.last)
@@ -34,7 +34,7 @@ class CharitiesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update charity" do
-    patch charity_url(@charity), params: { charity: { banner_image_url: @charity.banner_image_url, banner_image_url: @charity.banner_image_url, description: @charity.description, donation_url: @charity.donation_url, name: @charity.name, status: @charity.status, website_url: @charity.website_url } }
+    patch charity_url(@charity), params: { charity: { banner_image: @charity.banner_image, banner_image: @charity.banner_image, description: @charity.description, donation_url: @charity.donation_url, name: @charity.name, status: @charity.status, website_url: @charity.website_url } }
     assert_redirected_to charity_url(@charity)
   end
 
