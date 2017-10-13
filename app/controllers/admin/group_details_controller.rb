@@ -1,5 +1,4 @@
-class Admin::GroupDetailsController < Admin::ApplicationController
-  before_action :set_group
+class Admin::GroupDetailsController < Admin::GroupSubResourceBaseController
   before_action :set_group_detail, only: [:show, :edit, :update, :destroy]
 
   # GET /group_details
@@ -66,10 +65,6 @@ class Admin::GroupDetailsController < Admin::ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_group_detail
     @group_detail = @group.detail
-  end
-
-  def set_group
-    @group ||= Group.find(params[:group_id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

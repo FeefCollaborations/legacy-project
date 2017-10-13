@@ -1,6 +1,6 @@
 class Admin::GroupsController < Admin::ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_bredcrumb
   # GET /groups
   # GET /groups.json
   def index
@@ -62,13 +62,23 @@ class Admin::GroupsController < Admin::ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_group
-      @group = Group.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_group
+    @group = Group.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def group_params
-      params.require(:group).permit(:name, :donation_url, :homepage_banner_image, :logo_image, :favicon_image, :favicon_image_16_by_16, :favicon_image_32_by_32)
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def group_params
+    params.require(:group).permit(:name, :donation_url, :homepage_banner_image, :logo_image, :favicon_image, :favicon_image_16_by_16, :favicon_image_32_by_32)
+  end
+
+  def set_bredcrumb
+    super
+    if action_name == 'show'
+      push_to_breadcrumb({ title: @group.name })
+    elsif action_name == 'edit'
+      push_to_breadcrumb({ title: @group.name, link: group_path(@group) })
     end
+  end
+
 end

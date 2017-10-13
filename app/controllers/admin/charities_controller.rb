@@ -1,5 +1,4 @@
-class Admin::CharitiesController < Admin::ApplicationController
-  include GroupSubResourcesConcern
+class Admin::CharitiesController < Admin::GroupSubResourceBaseController
   before_action :set_charity, only: [:show, :edit, :update, :destroy]
 
   # GET /charities
@@ -72,5 +71,6 @@ class Admin::CharitiesController < Admin::ApplicationController
   def charity_params
     params.require(:charity).permit(:name, :description, :banner_image, :donation_url, :website_url, :status)
   end
+
 
 end

@@ -1,5 +1,6 @@
 class Admin::SessionsController < Admin::ApplicationController
   skip_before_action :validate_session, only: [ :new, :create ]
+  skip_before_action :set_breadcrumb
 
   def new
   end

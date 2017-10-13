@@ -37,6 +37,8 @@
                   = link_to "Logout", session_path, method: :delete
       .row
         .container-fluid
+          = render "admin/shared/breadcrumb", breadcrumb: @breadcrumb
+        .container-fluid
           = render "shared/flash_messages"
         .row
           .panel

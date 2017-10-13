@@ -1,5 +1,4 @@
-class Admin::FaqsController < Admin::ApplicationController
-  before_action :set_group
+class Admin::FaqsController < Admin::GroupSubResourceBaseController
   before_action :set_faq, only: [:show, :edit, :update, :destroy]
 
   # GET /faqs
@@ -73,7 +72,4 @@ class Admin::FaqsController < Admin::ApplicationController
     params.require(:faq).permit(:question, :answer)
   end
 
-  def set_group
-    @group ||= Group.find(params[:group_id])
-  end
 end

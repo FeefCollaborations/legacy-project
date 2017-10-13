@@ -24,6 +24,15 @@
   %b Favicon 32 x 32:
 %p= image_tag(@group.favicon_image_32_by_32, height: "100") if @group.favicon_image_32_by_32
 
-= link_to 'Edit', edit_group_path(@group)
-\|
 = link_to 'Back', groups_path
+|
+= link_to 'FAQs', group_faqs_path(@group)
+|
+= link_to 'Group Details', group_group_details_path(@group)
+|
+= link_to 'Charities', group_charities_path(@group)
+|
+= link_to 'Edit', edit_group_path(@group)
+|
+= link_to 'Destroy', @group, method: :delete, data: { confirm: 'Are you sure?' }
+
